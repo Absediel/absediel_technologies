@@ -1,0 +1,1245 @@
+/* ======================================================
+   TESTIMONIAL SECTION
+====================================================== */
+
+.testimonial-section{
+    position: relative;
+    overflow: hidden;
+    padding: 120px 0;
+}
+
+/* ===========================
+   BACKGROUND GLOW
+=========================== */
+
+.testimonial-section::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    border-radius:50%;
+
+    background:rgba(11,29,81,.40);
+
+    filter:blur(120px);
+
+    left:-180px;
+
+    top:0;
+
+    z-index:0;
+
+}
+
+.testimonial-section::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    background:rgba(212,175,55,.12);
+
+    filter:blur(120px);
+
+    right:-140px;
+
+    bottom:0;
+
+    z-index:0;
+
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.testimonial-section .max-w-7xl{
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+/* ===========================
+   HEADING
+=========================== */
+
+.testimonial-heading{
+
+    text-align:center;
+
+    max-width:900px;
+
+    margin:auto;
+
+    margin-bottom:70px;
+
+}
+
+.testimonial-heading p{
+
+    color:#D4AF37;
+
+    letter-spacing:6px;
+
+    font-size:14px;
+
+    text-transform:uppercase;
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+}
+
+.testimonial-heading h2{
+
+    color:white;
+
+    font-size:56px;
+
+    line-height:1.1;
+
+    font-weight:700;
+
+}
+
+.testimonial-heading span{
+
+    color:#D4AF37;
+
+}
+
+.testimonial-heading h4{
+
+    margin-top:25px;
+
+    color:#9CA3AF;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    font-weight:400;
+
+}
+
+/* ===========================
+   SLIDER
+=========================== */
+
+.testimonial-slider{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:520px;
+
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.testimonial-card{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:860px;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,.04);
+
+    backdrop-filter:blur(24px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    padding:60px;
+
+    transition:.45s;
+
+}
+
+.testimonial-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:rgba(212,175,55,.25);
+
+    box-shadow:
+
+    0 25px 70px rgba(0,0,0,.45),
+
+    0 0 40px rgba(212,175,55,.15);
+
+}
+
+/* ===========================
+   GLASS SHINE
+=========================== */
+
+.testimonial-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-150%;
+
+    left:-70%;
+
+    width:50%;
+
+    height:350%;
+
+    transform:rotate(25deg);
+
+    background:
+
+    rgba(255,255,255,.05);
+
+    transition:.9s;
+
+}
+
+.testimonial-card:hover::before{
+
+    left:150%;
+
+}
+
+/* ===========================
+   QUOTE ICON
+=========================== */
+
+.quote-icon{
+
+    position:absolute;
+
+    top:35px;
+
+    right:40px;
+
+    font-size:110px;
+
+    color:rgba(212,175,55,.08);
+
+    pointer-events:none;
+
+}
+
+/* ===========================
+   STARS
+=========================== */
+
+.testimonial-stars{
+
+    display:flex;
+
+    gap:8px;
+
+    color:#D4AF37;
+
+    font-size:18px;
+
+    margin-bottom:30px;
+
+}
+
+/* ===========================
+   REVIEW
+=========================== */
+
+.testimonial-review{
+
+    color:#F3F4F6;
+
+    font-size:24px;
+
+    line-height:1.9;
+
+    font-weight:400;
+
+}
+
+/* ===========================
+   CLIENT
+=========================== */
+
+.testimonial-client{
+
+    margin-top:45px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.testimonial-client img{
+
+    width:78px;
+
+    height:78px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:3px solid rgba(212,175,55,.35);
+
+    transition:.35s;
+
+}
+
+.testimonial-avatar-fallback{
+
+    width:78px;
+
+    height:78px;
+
+    min-width:78px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:linear-gradient(135deg, rgba(212,175,55,.20), rgba(11,29,81,.80));
+
+    border:3px solid rgba(212,175,55,.35);
+
+    color:#D4AF37;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    transition:.35s;
+
+    user-select:none;
+
+}
+
+.testimonial-card:hover .testimonial-client img,
+.testimonial-card:hover .testimonial-avatar-fallback{
+
+    transform:scale(1.08);
+
+    border-color:rgba(212,175,55,.65);
+
+    box-shadow:0 0 25px rgba(212,175,55,.30);
+
+}
+
+/* ===========================
+   CLIENT INFO
+=========================== */
+
+.testimonial-client h4{
+
+    color:white;
+
+    font-size:22px;
+
+    margin-bottom:5px;
+
+}
+
+.testimonial-client span{
+
+    color:#9CA3AF;
+
+    font-size:15px;
+
+}
+/* ==========================================
+        NAVIGATION BUTTONS
+========================================== */
+
+.nav-btn{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(212,175,55,.25);
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(15px);
+
+    color:#D4AF37;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:.35s;
+
+    z-index:20;
+
+}
+
+.nav-btn svg{
+
+    font-size:18px;
+
+}
+
+.nav-btn:hover{
+
+    background:#D4AF37;
+
+    color:#000;
+
+    transform:translateY(-50%) scale(1.08);
+
+    box-shadow:
+
+    0 0 30px rgba(212,175,55,.35);
+
+}
+
+.left{
+
+    left:-30px;
+
+}
+
+.right{
+
+    right:-30px;
+
+}
+
+/* ==========================================
+        DOTS
+========================================== */
+
+.testimonial-dots{
+
+    margin-top:40px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+.dot{
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    border:none;
+
+    cursor:pointer;
+
+    background:rgba(255,255,255,.18);
+
+    transition:.35s;
+
+}
+
+.dot:hover{
+
+    background:#D4AF37;
+
+}
+
+.dot.active{
+
+    width:36px;
+
+    border-radius:50px;
+
+    background:#D4AF37;
+
+}
+
+/* ==========================================
+        LOADING
+========================================== */
+
+.loading-text{
+
+    color:white;
+
+    text-align:center;
+
+    font-size:26px;
+
+    padding:120px 0;
+
+}
+
+/* ==========================================
+        SKELETON LOADER
+========================================== */
+
+.skeleton{
+
+    width:100%;
+
+    height:420px;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    background:rgba(255,255,255,.05);
+
+}
+
+.skeleton::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+    90deg,
+
+    transparent,
+
+    rgba(255,255,255,.12),
+
+    transparent
+
+    );
+
+    animation:skeletonMove 1.4s infinite;
+
+}
+
+@keyframes skeletonMove{
+
+    from{
+
+        transform:translateX(-100%);
+
+    }
+
+    to{
+
+        transform:translateX(100%);
+
+    }
+
+}
+
+/* ==========================================
+        ERROR STATE
+========================================== */
+
+.error-box{
+
+    padding:80px;
+
+    text-align:center;
+
+}
+
+.error-box h2{
+
+    color:#fff;
+
+    font-size:34px;
+
+}
+
+.error-box p{
+
+    color:#9CA3AF;
+
+    margin-top:15px;
+
+}
+
+/* ==========================================
+        EMPTY STATE
+========================================== */
+
+.empty-box{
+
+    padding:80px;
+
+    text-align:center;
+
+}
+
+.empty-box h2{
+
+    color:white;
+
+    font-size:34px;
+
+}
+
+.empty-box p{
+
+    margin-top:15px;
+
+    color:#9CA3AF;
+
+}
+
+/* ==========================================
+        FLOATING ORBS
+========================================== */
+
+.testimonial-orb{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(90px);
+
+    pointer-events:none;
+
+    animation:orbFloat 8s ease-in-out infinite;
+
+}
+
+.orb-one{
+
+    width:260px;
+
+    height:260px;
+
+    background:#0B1D51;
+
+    left:-100px;
+
+    top:120px;
+
+}
+
+.orb-two{
+
+    width:220px;
+
+    height:220px;
+
+    background:#D4AF37;
+
+    opacity:.18;
+
+    right:-80px;
+
+    bottom:100px;
+
+}
+
+@keyframes orbFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-25px);
+
+    }
+
+}
+
+/* ==========================================
+        HOVER EFFECTS
+========================================== */
+
+.testimonial-card{
+
+    will-change:transform;
+
+}
+
+.testimonial-card:hover{
+
+    transform:
+
+    translateY(-10px)
+
+    scale(1.02);
+
+}
+
+.testimonial-card:hover .quote-icon{
+
+    color:rgba(212,175,55,.16);
+
+}
+
+.testimonial-stars svg{
+
+    transition:.3s;
+
+}
+
+.testimonial-card:hover .testimonial-stars svg{
+
+    transform:translateY(-3px);
+
+}
+
+/* ==========================================
+        FADE ANIMATION
+========================================== */
+
+.fade-up{
+
+    animation:fadeUp .7s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* ==========================================
+        NAVIGATION BUTTONS
+========================================== */
+
+.nav-btn{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(212,175,55,.25);
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(15px);
+
+    color:#D4AF37;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:.35s;
+
+    z-index:20;
+
+}
+
+.nav-btn svg{
+
+    font-size:18px;
+
+}
+
+.nav-btn:hover{
+
+    background:#D4AF37;
+
+    color:#000;
+
+    transform:translateY(-50%) scale(1.08);
+
+    box-shadow:
+
+    0 0 30px rgba(212,175,55,.35);
+
+}
+
+.left{
+
+    left:-30px;
+
+}
+
+.right{
+
+    right:-30px;
+
+}
+
+/* ==========================================
+        DOTS
+========================================== */
+
+.testimonial-dots{
+
+    margin-top:40px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+.dot{
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    border:none;
+
+    cursor:pointer;
+
+    background:rgba(255,255,255,.18);
+
+    transition:.35s;
+
+}
+
+.dot:hover{
+
+    background:#D4AF37;
+
+}
+
+.dot.active{
+
+    width:36px;
+
+    border-radius:50px;
+
+    background:#D4AF37;
+
+}
+
+/* ==========================================
+        LOADING
+========================================== */
+
+.loading-text{
+
+    color:white;
+
+    text-align:center;
+
+    font-size:26px;
+
+    padding:120px 0;
+
+}
+
+/* ==========================================
+        SKELETON LOADER
+========================================== */
+
+.skeleton{
+
+    width:100%;
+
+    height:420px;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    background:rgba(255,255,255,.05);
+
+}
+
+.skeleton::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+    90deg,
+
+    transparent,
+
+    rgba(255,255,255,.12),
+
+    transparent
+
+    );
+
+    animation:skeletonMove 1.4s infinite;
+
+}
+
+@keyframes skeletonMove{
+
+    from{
+
+        transform:translateX(-100%);
+
+    }
+
+    to{
+
+        transform:translateX(100%);
+
+    }
+
+}
+
+/* ==========================================
+        ERROR STATE
+========================================== */
+
+.error-box{
+
+    padding:80px;
+
+    text-align:center;
+
+}
+
+.error-box h2{
+
+    color:#fff;
+
+    font-size:34px;
+
+}
+
+.error-box p{
+
+    color:#9CA3AF;
+
+    margin-top:15px;
+
+}
+
+/* ==========================================
+        EMPTY STATE
+========================================== */
+
+.empty-box{
+
+    padding:80px;
+
+    text-align:center;
+
+}
+
+.empty-box h2{
+
+    color:white;
+
+    font-size:34px;
+
+}
+
+.empty-box p{
+
+    margin-top:15px;
+
+    color:#9CA3AF;
+
+}
+
+/* ==========================================
+        FLOATING ORBS
+========================================== */
+
+.testimonial-orb{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(90px);
+
+    pointer-events:none;
+
+    animation:orbFloat 8s ease-in-out infinite;
+
+}
+
+.orb-one{
+
+    width:260px;
+
+    height:260px;
+
+    background:#0B1D51;
+
+    left:-100px;
+
+    top:120px;
+
+}
+
+.orb-two{
+
+    width:220px;
+
+    height:220px;
+
+    background:#D4AF37;
+
+    opacity:.18;
+
+    right:-80px;
+
+    bottom:100px;
+
+}
+
+@keyframes orbFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-25px);
+
+    }
+
+}
+
+/* ==========================================
+        HOVER EFFECTS
+========================================== */
+
+.testimonial-card{
+
+    will-change:transform;
+
+}
+
+.testimonial-card:hover{
+
+    transform:
+
+    translateY(-10px)
+
+    scale(1.02);
+
+}
+
+.testimonial-card:hover .quote-icon{
+
+    color:rgba(212,175,55,.16);
+
+}
+
+.testimonial-stars svg{
+
+    transition:.3s;
+
+}
+
+.testimonial-card:hover .testimonial-stars svg{
+
+    transform:translateY(-3px);
+
+}
+
+/* ==========================================
+        FADE ANIMATION
+========================================== */
+
+.fade-up{
+
+    animation:fadeUp .7s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================
+        RESPONSIVE MEDIA QUERIES
+========================================== */
+@media (max-width: 1200px) {
+    .testimonial-heading h2 {
+        font-size: 48px;
+    }
+    .testimonial-card {
+        padding: 45px;
+    }
+    .left {
+        left: -15px;
+    }
+    .right {
+        right: -15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonial-section {
+        padding: 80px 0;
+    }
+    .testimonial-heading {
+        margin-bottom: 40px;
+    }
+    .testimonial-heading h2 {
+        font-size: 36px;
+    }
+    .testimonial-heading h4 {
+        font-size: 16px;
+    }
+    .testimonial-card {
+        padding: 30px 24px;
+        border-radius: 20px;
+    }
+    .testimonial-review {
+        font-size: 18px;
+        line-height: 1.7;
+    }
+    .testimonial-client {
+        margin-top: 30px;
+    }
+    .testimonial-client img {
+        width: 60px;
+        height: 60px;
+    }
+    .testimonial-client h4 {
+        font-size: 18px;
+    }
+    .testimonial-slider {
+        min-height: auto;
+        padding: 0 40px;
+    }
+    .nav-btn {
+        width: 44px;
+        height: 44px;
+    }
+    .left {
+        left: -10px;
+    }
+    .right {
+        right: -10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonial-heading h2 {
+        font-size: 28px;
+    }
+    .testimonial-card {
+        padding: 24px 16px;
+    }
+    .testimonial-review {
+        font-size: 16px;
+    }
+    .testimonial-slider {
+        padding: 0;
+    }
+    .nav-btn {
+        display: none; /* Hide navigation buttons on mobile since swipe is supported */
+    }
+}

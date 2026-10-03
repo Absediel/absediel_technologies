@@ -1,0 +1,35 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model ContactSubmission {
+  id              Int      @id @default(autoincrement())
+  name            String
+  email           String
+  phone           String
+  serviceInterest String
+  message         String
+  createdAt       DateTime @default(now())
+}
+
+model QuotationSubmission {
+  id          Int      @id @default(autoincrement())
+  name        String
+  company     String?  @default("")
+  email       String
+  phone       String
+  services    String
+  timeline    String
+  budget      String
+  features    String?  @default("")
+  description String
+  createdAt   DateTime @default(now())
+}

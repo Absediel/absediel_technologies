@@ -1,0 +1,147 @@
+.box {
+  position: relative;
+  width: 250px;
+  max-width: 100%;
+  padding: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  z-index: 1;
+  border: none;
+  transition: all 0.8s ease-in;
+}
+
+.box:hover {
+  color: white;
+}
+
+/* Partial border corners */
+.box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20%;
+  height: 25%;
+  border-top: 1px solid orange;
+  border-left: 1px solid green;
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 15%;
+  height: 20%;
+  border-bottom: 1px solid green;
+  border-right: 1px solid orange;
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+/* On hover — extend corners into full border */
+.box:hover::before,
+.box:hover::after {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width: 768px) {
+  .box {
+    width: 220px;
+    padding: 17px 18px;
+  }
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 480px) {
+  .box {
+    width: 100%;
+    max-width: 220px;
+    padding: 15px 16px;
+    font-size: 14px;
+  }
+}
+
+
+/* =========================
+   Small Mobile
+========================= */
+
+@media (max-width: 360px) {
+  .box {
+    max-width: 190px;
+    padding: 14px 12px;
+    font-size: 13px;
+  }
+}
+
+/* =========================
+   Blink Animation for CTA (Get Free Quote)
+   - Completely borderless to match original .box style
+   - Rhythmic ambient glow and corner accent flash
+========================= */
+@keyframes heroQuoteBlink {
+  0%, 100% {
+    background-color: transparent;
+    box-shadow: 0 0 0px rgba(212, 175, 55, 0);
+  }
+  50% {
+    background-color: rgba(212, 175, 55, 0.12);
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.35);
+  }
+}
+
+@keyframes cornerGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 0px transparent);
+  }
+  50% {
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.85));
+  }
+}
+
+.hero-quote-blink-btn {
+  position: relative;
+  border: none !important;
+  outline: none !important;
+  background-color: transparent !important;
+  color: #ffffff !important;
+  animation: heroQuoteBlink 1.8s ease-in-out infinite !important;
+  transition: all 0.3s ease;
+}
+
+.hero-quote-blink-btn::before,
+.hero-quote-blink-btn::after {
+  animation: cornerGlow 1.8s ease-in-out infinite;
+}
+
+.hero-quote-blink-btn:hover {
+  animation-play-state: paused !important;
+  border: none !important;
+  outline: none !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+.hero-quote-blink-btn:hover::before,
+.hero-quote-blink-btn:hover::after {
+  animation-play-state: paused !important;
+}
+
+
+

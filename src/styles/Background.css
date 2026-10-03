@@ -1,0 +1,12 @@
+.hero-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 900px;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  filter: blur(0.5px);   /* sirf 2px blur */
+  pointer-events: none;
+  user-select: none;
+  z-index: -10;
+}

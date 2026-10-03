@@ -1,0 +1,270 @@
+/* ===============================
+        SECTION
+================================ */
+
+.final-cta{
+
+    padding:120px 0;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* ===============================
+        CARD
+================================ */
+
+.cta-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    text-align:center;
+
+    padding:90px 70px;
+
+    border-radius:32px;
+
+    background:rgba(255,255,255,.04);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(212,175,55,.18);
+
+}
+
+/* Glow */
+
+.cta-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:320px;
+
+    height:320px;
+
+    border-radius:50%;
+
+    background:rgba(212,175,55,.08);
+
+    filter:blur(100px);
+
+    top:-100px;
+
+    left:-120px;
+
+}
+
+.cta-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+
+    height:260px;
+
+    border-radius:50%;
+
+    background:rgba(11,29,81,.30);
+
+    filter:blur(90px);
+
+    right:-80px;
+
+    bottom:-80px;
+
+}
+
+/* ===============================
+        BADGE
+================================ */
+
+.cta-badge{
+
+    display:inline-block;
+
+    color:#D4AF37;
+
+    letter-spacing:4px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    margin-bottom:24px;
+
+}
+
+/* ===============================
+        HEADING
+================================ */
+
+.cta-card h2{
+
+    color:#fff;
+
+    font-size:60px;
+
+    line-height:1.15;
+
+    margin-bottom:28px;
+
+}
+
+.cta-card h2 span{
+
+    color:#D4AF37;
+
+}
+
+/* ===============================
+        TEXT
+================================ */
+
+.cta-card p{
+
+    max-width:720px;
+
+    margin:auto;
+
+    color:#9CA3AF;
+
+    font-size:18px;
+
+    line-height:1.9;
+
+}
+
+/* ===============================
+        BUTTONS
+================================ */
+
+.cta-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:24px;
+
+    margin-top:50px;
+
+    flex-wrap:wrap;
+
+}
+
+/* ===============================
+        HOVER
+================================ */
+
+.cta-card{
+
+    transition:.35s;
+
+}
+
+.cta-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+
+    0 20px 60px rgba(0,0,0,.35),
+
+    0 0 40px rgba(212,175,55,.12);
+
+}
+@media (max-width:992px){
+
+    .cta-card{
+
+        padding:70px 40px;
+
+    }
+
+    .cta-card h2{
+
+        font-size:46px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .final-cta{
+
+        padding:90px 0;
+
+    }
+
+    .cta-card{
+
+        padding:50px 28px;
+
+        border-radius:24px;
+
+    }
+
+    .cta-card h2{
+
+        font-size:36px;
+
+    }
+
+    .cta-card p{
+
+        font-size:16px;
+
+    }
+
+    .cta-buttons{
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:16px;
+
+    }
+
+    .cta-buttons .btn{
+
+        width:100%;
+
+        max-width:320px;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .cta-card{
+
+        padding:40px 20px;
+
+    }
+
+    .cta-card h2{
+
+        font-size:30px;
+
+    }
+
+    .cta-badge{
+
+        font-size:12px;
+
+        letter-spacing:3px;
+
+    }
+
+}

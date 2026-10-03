@@ -1,0 +1,62 @@
+@import "tailwindcss";  
+
+html {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body {
+  background: #050505;
+  color: white;
+  font-family: Inter, sans-serif;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+section[id], div[id] {
+  scroll-margin-top: 100px;
+}
+
+/* Developer Agency Animations */
+@keyframes textGradientShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #D4AF37 35%,
+    #FFE57F 50%,
+    #D4AF37 65%,
+    #ffffff 100%
+  );
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textGradientShimmer 6s ease infinite;
+}
+
+.cyber-grid {
+  background-size: 44px 44px;
+  background-image: 
+    linear-gradient(to right, rgba(212, 175, 55, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(212, 175, 55, 0.035) 1px, transparent 1px);
+}

@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
-import { sendEmailNotification } from '@/lib/email';
+import { sendQuotationEmails } from '@/lib/email';
 
 export async function POST(request) {
   try {
@@ -42,25 +42,18 @@ export async function POST(request) {
       },
     });
 
-    // Send Email Notification
-    const emailSubject = `New Project Quotation Request: ${name} (${company || 'Individual'})`;
-    const emailBody = `New Quotation Proposal Submission received:
---------------------------------------------------
-Client Name: ${name}
-Company: ${company || 'Individual / Not specified'}
-Email: ${email}
-Phone: ${phone || 'Not provided'}
-Services: ${servicesStr}
-Timeline: ${timeline}
-Budget: ${budget}
-Features: ${featuresStr || 'None specified'}
-
-Project Description:
-${description}
---------------------------------------------------
-Submitted at: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}`;
-
-    sendEmailNotification(process.env.NOTIFICATION_EMAIL, emailSubject, emailBody).catch((err) =>
+    // Send Email Notifications (Admin + Client Confirmation)
+    sendQuotationEmails({
+      name: String(name).trim(),
+      company: String(company).trim(),
+      email: String(email).trim().toLowerCase(),
+      phone: String(phone || '').trim(),
+      services: servicesStr,
+      timeline: String(timeline || 'Flexible').trim(),
+      budget: String(budget || 'Undisclosed').trim(),
+      features: featuresStr,
+      description: String(description).trim(),
+    }).catch((err) =>
       console.error('[API Quotation] Email dispatch error:', err)
     );
 

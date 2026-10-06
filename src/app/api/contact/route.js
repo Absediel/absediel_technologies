@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
-import { sendEmailNotification } from '@/lib/email';
+import { sendContactEmails } from '@/lib/email';
 
 export async function POST(request) {
   try {
@@ -27,21 +27,14 @@ export async function POST(request) {
       },
     });
 
-    // Send Email Notification
-    const emailSubject = `New Contact Inquiry: ${name} (${selectedService})`;
-    const emailBody = `You received a new contact inquiry from Absediel Technologies website:
---------------------------------------------------
-Name: ${name}
-Email: ${email}
-Phone: ${phone || 'Not provided'}
-Service Interest: ${selectedService}
-Message:
-${message}
---------------------------------------------------
-Submitted at: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}`;
-
-    // Background email trigger (doesn't block client response)
-    sendEmailNotification(process.env.NOTIFICATION_EMAIL, emailSubject, emailBody).catch((err) =>
+    // Send Email Notifications (Admin + Client Confirmation)
+    sendContactEmails({
+      name: String(name).trim(),
+      email: String(email).trim().toLowerCase(),
+      phone: String(phone || '').trim(),
+      serviceInterest: String(selectedService).trim(),
+      message: String(message).trim(),
+    }).catch((err) =>
       console.error('[API Contact] Email dispatch error:', err)
     );
 
